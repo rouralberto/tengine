@@ -4,7 +4,7 @@ A lightweight Docker image for [Tengine](http://tengine.taobao.org/), a web serv
 Tengine has been an open source project since December 2011. It is being actively developed by the Tengine team, whose core members are from Taobao, Sogou and other Internet companies. Tengine is a community effort and everyone is encouraged to get involved.
 
 ## Configuration
-Add a custom `default.conf` to the `/etc/nginx/conf.d/` directory.
+Add a custom `default.conf` to the `/etc/nginx/conf.d/` directory. This image is intended to work as a drop-in replacement for Nginx.
 
 ## Usage example with Docker Compose
 ```
