@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  tengine:
+    build:
+      context: .
+    container_name: tengine
+    network_mode: bridge
+    restart: on-failure
+    ports:
+    - 80:80
