@@ -45,7 +45,6 @@ RUN apt-get update \
         libpcre++-dev \
         libssl-dev \
         zlib1g-dev \
-        wget \
         gcc \
         make
 
