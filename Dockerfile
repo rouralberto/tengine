@@ -4,16 +4,16 @@ ARG TENGINE_VERSION=2.2.3
 
 EXPOSE 80 443
 
-RUN apt update \
-    && apt -y install \
+RUN apt-get update \
+    && apt-get -y install \
         libpcre++-dev \
         libssl-dev \
         zlib1g-dev \
         wget \
         gcc \
         make \
-    && wget http://tengine.taobao.org/download/tengine-${TENGINE_VERSION}.tar.gz \
-    && tar -zxvf tengine-${TENGINE_VERSION}.tar.gz && rm tengine-${TENGINE_VERSION}.tar.gz \
+    && wget https://github.com/alibaba/tengine/archive/${TENGINE_VERSION}.tar.gz \
+    && tar -zxvf ${TENGINE_VERSION}.tar.gz && rm ${TENGINE_VERSION}.tar.gz \
     && mkdir /usr/local/nginx \
     && mkdir /var/tmp/nginx \
     && cd tengine-${TENGINE_VERSION} \
@@ -41,7 +41,7 @@ RUN apt update \
     && chmod 700 -R /var/tmp/nginx \
     && chmod 777 -R /usr/local/nginx/logs \
     && ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx \
-    && apt clean && apt remove -y \
+    && apt-get clean && apt-get remove -y \
         libpcre++-dev \
         libssl-dev \
         zlib1g-dev \
