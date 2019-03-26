@@ -14,8 +14,7 @@ RUN apt-get update \
         make \
     && wget https://github.com/alibaba/tengine/archive/${TENGINE_VERSION}.tar.gz \
     && tar -zxvf ${TENGINE_VERSION}.tar.gz && rm ${TENGINE_VERSION}.tar.gz \
-    && mkdir /usr/local/nginx \
-    && mkdir /var/tmp/nginx \
+    && mkdir /usr/local/nginx /var/tmp/nginx /var/log/nginx \
     && cd tengine-${TENGINE_VERSION} \
     && ./configure \
         --prefix=/usr/local/nginx \
