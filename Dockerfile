@@ -1,12 +1,12 @@
-FROM debian:stretch-slim
+FROM debian:12-slim
 
-ARG TENGINE_VERSION=2.3.2
+ARG TENGINE_VERSION=3.1.0
 
 EXPOSE 80 443
 
 RUN apt-get update \
     && apt-get -y install \
-        libpcre++-dev \
+        libpcre2-dev \
         libssl-dev \
         zlib1g-dev \
         wget \
@@ -41,7 +41,7 @@ RUN apt-get update \
     && chmod 777 -R /usr/local/nginx/logs \
     && ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx \
     && apt-get clean && apt-get remove -y \
-        libpcre++-dev \
+        libpcre2-dev \
         libssl-dev \
         zlib1g-dev \
         gcc \
